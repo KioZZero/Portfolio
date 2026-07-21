@@ -1,144 +1,72 @@
 :root {
-  --primary-background-color: rgb(256, 128, 0);
-  --primary-background-color-shade: rgb(156, 28, 0);
-  --secondary-background-color: white;
-  --text-color: rgb(20,20,20);
-  --spinner-animation-duration: 8s;
+  --glass-color: rgb(40, 40, 80);
+  --glass-color-semi-transparent: rgba(40, 40, 80, 0.5);
+  --glass-color-transparent: rgba(40, 40, 80, 0.2);
+  --background-color: white;
 }
 
-html {
-  box-shadow: inset 0 0 10px 3px var(--primary-background-color-shade);
+html body {
+  width: 100%;
   margin: 0;
   padding: 0;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-color: var(--primary-background-color);
-  color: var(--text-color);
-  height: 100vh;
-}
-
-#loading-text {
   text-align: center;
-  font-size: 70px;
-  color: var(--secondary-background-color);
+  font-family: Arial;
+  background-color: white;
 }
 
-#loading-screen {
-  position: fixed;
-  box-shadow: 0 0 10px 2px var(--primary-background-color-shade);
+header {
+  z-index: 10;
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: auto auto;
   top: 0;
-  left: 0;
-  bottom: 0;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  margin: 0;
+  background-color: var(--glass-color-transparent);
+  backdrop-filter: blur(6.7px);
+  -webkit-backdrop-filter: blur(6.7px);
+  box-shadow: 0 0 10px 0 var(--glass-color-transparent) inset;
+  font-size: 10px;
+  text-align: left;
+  padding: 5px 10px;
+}
+
+#header-text {
+}
+
+#toggles-container {
+  margin: 0 20px;
+  gap: 10px;
+}
+
+.toggle-button {
+  border-width: 0px;
+  background-color: var(--glass-color-transparent);
+  backdrop-filter: blur(6.7px);
+  box-shadow: 0 0 10px 0 var(--glass-color-transparent) inset;
+  -webkit-backdrop-filter: blur(6.7px);
+  border-radius: 5px;
+  height: 40px;
+  width: 40px;
+}
+
+/*temporaire*/
+#modules-container {
+  width: 300px;
   right: 0;
-  margin: 20px;
-  background-color: var(--secondary-background-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
+  position: fixed;
+  margin: 40px 0;
 }
 
-.spinner-group {
-  position: absolute;
-  width: 400px;
-  height: 400px;
+.module-container {
+  background-color: var(--glass-color-transparent);
+  backdrop-filter: blur(6.7px);
+  -webkit-backdrop-filter: blur(6.7px);
+  box-shadow: 0 0 10px 0 var(--glass-color-transparent) inset;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
 }
-
-.spinner-layer {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: spin var(--spinner-animation-duration) ease-in-out infinite ;
-}
-
-.spinner-layer.opacity-100, .spinner-layer.opacity-75, .spinner-layer.opacity-50, .spinner-layer.opacity-25 {
-  animation-duration: var(--spinner-animation-duration);
-}
-
-.spinner-dot {
-  position: absolute;
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  background-color: rgba(255, 128, 0, 1);
-  transition: background-color 300ms ease;
-  transform: rotate(var(--angle)) translateX(var(--orbit-radius, 230px)) rotate(calc(-1 * var(--angle)));
-}
-
-.spinner-layer.opacity-75 .spinner-dot {
-  background-color: rgb(255, 128, 0, 0.75);
-}
-
-.spinner-layer.opacity-50 .spinner-dot {
-  background-color: rgb(255, 128, 0, 0.5);
-}
-
-.spinner-layer.opacity-25 .spinner-dot {
-  background-color: rgba(255, 128, 0, 0.25);
-}
-
-.spinner-layer.opacity-100 .spinner-dot, .spinner-layer.opacity-75 .spinner-dot, .spinner-layer.opacity-50 .spinner-dot, .spinner-layer.opacity-25 .spinner-dot {
-  --orbit-radius: 200px;
-}
-
-#black-circle {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  background-color: black;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(720deg);
-  }
-  100% {
-    transform: rotate(-0deg);
-  }
-}
-
-@keyframes color-100 {
-  0% { background-color: rgba(255,128,0,1); }
-  50% { background-color: rgba(255,128,0,0.25); }
-  100% { background-color: rgba(255,128,0,1); }
-}
-
-@keyframes color-75 {
-  0% { background-color: rgba(255,128,0,0.75); }
-  50% { background-color: rgba(255,128,0,0.50); }
-  100% { background-color: rgba(255,128,0,0.75); }
-}
-
-@keyframes color-50 {
-  0% { background-color: rgba(255,128,0,0.5); }
-  50% { background-color: rgba(255,128,0,0.75); }
-  100% { background-color: rgba(255,128,0,0.5); }
-}
-
-@keyframes color-25 {
-  0% { background-color: rgba(255,128,0,0.25); }
-  50% { background-color: rgba(255,128,0,1.0); }
-  100% { background-color: rgba(255,128,0,0.25); }
-}
-
-.spinner-layer.opacity-100 .spinner-dot { animation: color-100 var(--spinner-animation-duration) ease-in-out infinite; }
-.spinner-layer.opacity-75  .spinner-dot { animation: color-75 var(--spinner-animation-duration) ease-in-out infinite; }
-.spinner-layer.opacity-50  .spinner-dot { animation: color-50 var(--spinner-animation-duration) ease-in-out infinite; }
-.spinner-layer.opacity-25  .spinner-dot { animation: color-25 var(--spinner-animation-duration) ease-in-out infinite; }
-
-.spinner-group.step-50 .spinner-layer.opacity-25 .spinner-dot { animation-name: color-100; }
-.spinner-group.step-50 .spinner-layer.opacity-50 .spinner-dot { animation-name: color-75; }
-.spinner-group.step-50 .spinner-layer.opacity-75 .spinner-dot { animation-name: color-50; }
-.spinner-group.step-50 .spinner-layer.opacity-100 .spinner-dot { animation-name: color-25; }
-
