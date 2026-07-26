@@ -55,3 +55,33 @@ function toggleThemeModule() {
     console.log("Theme module closed");
   }
 }
+
+
+/* Language module */
+
+var isLanguageModuleVisible = false;
+
+function renderLanguageModule() {
+  document.getElementById('language-module-container').innerHTML = languageData.html;
+
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const activeLink = document.querySelector(`.theme a[href="${currentPath}"]`);
+  
+  if (activeLink) {
+    activeLink.classList.add('active');
+  }
+}
+
+function toggleLanguageModule() {
+  isLanguageModuleVisible = !isLanguageModuleVisible;
+  
+  const container = document.getElementById('language-module-container');
+
+  if (isLanguageModuleVisible) {
+    renderLanguageModule();
+    console.log("Language module opened");
+  } else {
+    container.innerHTML = '';
+    console.log("Language module closed");
+  }
+}

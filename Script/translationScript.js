@@ -1,18 +1,18 @@
 const translation = {
   en: {
-    welcome: "Welcome to my website!",
+    welcome: "Welcome to my portfolio !",
     description: "This is a simple vanilla JS i18n example."
   },
   fr: {
-    welcome: "Bienvenue sur mon site web !",
+    welcome: "Bienvenue sur mon portfolio !",
     description: "Ceci est un exemple i18n simple en JS vanilla."
   },
   es: {
-    welcome: "¡Bienvenido a mi sitio web!",
+    welcome: "¡Bienvenido a mi portfolio !",
     description: "Este es un ejemplo simple de i18n en JS vanilla."
   },
   de: {
-    welcome: "Willkommen auf meiner Website!",
+    welcome: "Willkommen auf meiner portfolio !",
     description: "Dies ist ein einfaches Vanilla-JS-i18n-Beispiel."
   }
 };
@@ -40,33 +40,20 @@ function updatePageText() {
   });
 }
 
-/*
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>i18n Demo</title>
-</head>
-<body>
 
+/*
   <button onclick="changeLanguage('en')">EN</button>
   <button onclick="changeLanguage('fr')">FR</button>
   <button onclick="changeLanguage('es')">ES</button>
   <button onclick="changeLanguage('de')">DE</button>
 
-  <hr>
-
   <h1 data-i18n="welcome">Welcome to my website!</h1>
-  <p data-i18n="description">This is a simple vanilla JS i18n example.</p>
 
   <script src="script.js"></script>
+
   <script>
-    // Translate the page once DOM is fully loaded
     document.addEventListener("DOMContentLoaded", () => {
       updatePageText();
     });
   </script>
-</body>
-</html>
-
 */
