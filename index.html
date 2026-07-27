@@ -5,36 +5,37 @@
   <meta charset="UTF-8">
   <meta name="Niels portfolio" content="projects">
   <meta name="description" content="A page to show my projects">
-  <link rel="stylesheet" href="Style/styles.css">
+  <link rel="stylesheet" href="Style/core.css">
+  <link rel="stylesheet" href="Style/modules.css">
+  <link rel="stylesheet" href="Style/pages.css">
   <script src="Script/moduleLoader.js"></script>
   <script src="Script/modules.js"></script>
   <script src="Script/dateScript.js"></script>
   <script src="Script/translationScript.js"></script>
+  <script src="Script/introOverlay.js" defer></script>
 </head>
 
 <body>
+  <div id="intro-overlay"></div>
   <header>
     <h1>Niels</h1>
     <div id="toggles-container">
-      <button class="toggle-button" title="Links" onclick="toggleSidebarModule()"></button>
-      <button class="toggle-button" title="Themes" onclick="toggleThemeModule()"></button>
-      <button class="toggle-button" title="Languages" onclick="toggleLanguageModule()"></button>
+      <button class="toggle-button" title="Links" onclick="toggleSidebarModule()"><span class="toggle-icon" aria-hidden="true">🔗</span></button>
+      <button class="toggle-button" title="Themes" onclick="toggleThemeModule()"><span class="toggle-icon" aria-hidden="true">🎨</span></button>
+      <button class="toggle-button" title="Languages" onclick="toggleLanguageModule()"><span class="toggle-icon" aria-hidden="true">🌐</span></button>
     </div>
   </header>
-
   <section id="modules-container">
     <div id="sidebar-module-container"></div>
     <div id="theme-module-container"></div>
     <div id="language-module-container"></div>
   </section>
-
   <section id="content-container">
-    <h2>Welcome to my portfolio</h2>
-    <p>My name is Niels and i am a junior developper from Lyon</p> ajout d'une carte avec position approximative de lyon
-
-    <a href="">Discover // redirect to 3d raycasting coded museum in js</a>
+    <h2 data-i18n="welcome">Welcome to my portfolio</h2>
+    <p data-i18n="description">My name is Niels and i am a junior developper from Lyon</p>
+    <p data-i18n="discover">Here you can discover a few highlights from my work and projects.</p>
+    <a class="page-link" href="Projects/projects.html">Explore my projects</a>
   </section>
-
   <footer>
     <p id="actualDate"></p>
   </footer>

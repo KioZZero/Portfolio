@@ -1,0 +1,226 @@
+#module-object-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.module-link {
+  background-color: var(--glass-color-transparent);
+  backdrop-filter: blur(6.7px);
+  box-shadow: 0 0 10px 0 var(--glass-color-transparent) inset;
+  -webkit-backdrop-filter: blur(6.7px);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin: 0;
+  width: 100%;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 16px;
+  transition: all 0.25s ease-out;
+  border-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.module-link:hover {
+  cursor: pointer;
+  background: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.links-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  align-items: stretch;
+}
+
+.links-list .module-link {
+  min-height: 46px;
+  border: 1px solid rgba(34, 48, 79, 0.08);
+  box-shadow: 0 6px 16px rgba(23, 32, 51, 0.06);
+  justify-content: flex-start;
+  padding: 8px 12px;
+}
+
+.links-list .module-link:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.link-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 0.95rem;
+}
+
+.link-label {
+  font-weight: 600;
+  color: inherit;
+}
+
+.link-icon img,
+.language-flag img,
+.toggle-icon img {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 1.05rem;
+}
+
+.links-list .module-link:hover,
+.language-option:hover,
+.module-link:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.theme-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.theme-option {
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border-radius: 50%;
+  justify-content: center;
+  color: transparent;
+  border: 2px solid rgba(34, 48, 79, 0.14);
+  flex: 0 0 auto;
+  display: inline-flex;
+}
+
+.theme-options .module-link {
+  width: auto;
+  padding: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: transparent;
+  box-shadow: none;
+  border: 2px solid rgba(34, 48, 79, 0.08);
+}
+
+.theme-options .module-link:hover {
+  transform: scale(1.06);
+  background: var(--accent-soft);
+  color: inherit;
+  box-shadow: 0 8px 18px rgba(23,32,51,0.08);
+}
+
+.theme-light {
+  background: var(--swatch-light);
+}
+
+.theme-dark {
+  background: var(--swatch-dark);
+}
+
+.theme-accent {
+  background: var(--swatch-accent);
+}
+
+.language-list {
+  display: grid;
+  gap: 8px;
+}
+
+.language-option {
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+}
+
+.language-option:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.language-flag {
+  font-size: 1.1rem;
+  width: 24px;
+  text-align: center;
+}
+
+.language-label {
+  font-weight: 600;
+}
+
+#modules-container {
+  width: 300px;
+  right: 16px;
+  top: 84px;
+  bottom: 80px;
+  position: fixed;
+  margin: 0;
+  max-height: calc(100vh - 84px - 80px);
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+#modules-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+#modules-container::-webkit-scrollbar-thumb {
+  background: rgba(109, 139, 255, 0.35);
+  border-radius: 999px;
+}
+
+.module-container {
+  background: var(--glass-color-transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 12px 24px rgba(23, 32, 51, 0.08);
+  border-radius: 16px;
+  margin: 10px 0;
+  padding: 10px 10px 14px;
+  opacity: 0;
+  transform: translateY(-12px) scale(0.98);
+  transform-origin: top right;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.module-container.module-enter {
+  opacity: 0;
+  transform: translateY(-12px) scale(0.98);
+}
+
+.module-container.module-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.module-container.module-exit {
+  opacity: 0;
+  transform: translateY(-12px) scale(0.98);
+  transition: opacity 180ms ease, transform 180ms ease;
+}

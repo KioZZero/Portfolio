@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects</title>
+  <link rel="stylesheet" href="../Style/core.css">
+  <link rel="stylesheet" href="../Style/modules.css">
+  <link rel="stylesheet" href="../Style/pages.css">
+  <script src="../Script/moduleLoader.js"></script>
+  <script src="../Script/modules.js"></script>
+  <script src="../Script/dateScript.js"></script>
+  <script src="../Script/translationScript.js"></script>
+  <script src="../Script/introOverlay.js" defer></script>
+  <script src="../Script/projectRenderer.js" defer></script>
+</head>
+<body>
+  <div id="intro-overlay"></div>
+  <header>
+    <h1>Projects</h1>
+    <div id="toggles-container">
+      <button class="toggle-button" title="Links" onclick="toggleSidebarModule()"><span class="toggle-icon" aria-hidden="true">🔗</span></button>
+      <button class="toggle-button" title="Themes" onclick="toggleThemeModule()"><span class="toggle-icon" aria-hidden="true">🎨</span></button>
+      <button class="toggle-button" title="Languages" onclick="toggleLanguageModule()"><span class="toggle-icon" aria-hidden="true">🌐</span></button>
+    </div>
+  </header>
+
+  <section id="modules-container">
+    <div id="sidebar-module-container"></div>
+    <div id="theme-module-container"></div>
+    <div id="language-module-container"></div>
+  </section>
+
+  <main class="projects-page-content">
+    <a class="page-link" href="../index.html">Back to home</a>
+
+    <section class="projects-grid" id="projects-grid">
+      <div id="projects-loader" class="projects-loader" aria-hidden="false">
+        <div class="spinner" aria-hidden="true"></div>
+        <div class="loader-text">Loading projects…</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p id="actualDate"></p>
+  </footer>
+</body>
+</html>

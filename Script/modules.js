@@ -2,9 +2,10 @@ const themeData = {
   html: `
     <nav class="module-container">
       <h2>Themes</h2>
-      <section id="module-object-container">
-        <button class="module-link">bright</button>
-        <button class="module-link">dark</button>
+      <section id="module-object-container" class="theme-options">
+        <button class="module-link theme-option theme-light" data-theme="light" title="Light theme" data-i18n="theme_light">Light</button>
+        <button class="module-link theme-option theme-dark" data-theme="dark" title="Dark theme" data-i18n="theme_dark">Dark</button>
+        <button class="module-link theme-option theme-accent" data-theme="accent" title="Accent theme" data-i18n="theme_accent">Accent</button>
       </section>
     </nav> `
 };
@@ -13,25 +14,33 @@ const sidebarData = {
   html: `
     <nav class="module-container">
       <h2>Links</h2>
-      <section id="module-object-container">
-        <a class="module-link" href="" target="_blank">Projects</a></span>
-        <a class="module-link" href="https://www.linkedin.com/in/niels-diab-043241250/" target="_blank">Linkedin</a></span>
-        <a class="module-link" href="https://github.com/KioZZero" target="_blank">Github</a></span>
-        <a class="module-link" href="https://www.instagram.com/niels_jc_d/" target="_blank">Instagram</a></span>
-        <a class="module-link" href="https://www.youtube.com/@ndiab6156" target="_blank">Youtube</a></span>
-      <section>
+      <section id="module-object-container" class="links-list">
+        <a class="module-link" href="https://github.com/KioZZero" target="_blank">
+          <img class="link-icon" src="../Resources/icons/github.svg" alt="" aria-hidden="true" onerror="this.style.display='none'" style="width:24px;height:24px;margin-right:8px;object-fit:contain">
+          <span class="link-label" data-i18n="link_github">Github</span>
+        </a>
+      </section>
     </nav>  `
 };
 
 const languageData = {
   html: `
-    <nav class="module-container">    
+    <nav class="module-container">
       <h2>Languages</h2>
-      <section id="module-object-container">
-        <button class="module-link">French</button>
-        <button class="module-link">English</button>
-        <button class="module-link">German</button>
-        <button class="module-link">Spanish</button>
+      <section id="module-object-container" class="language-list">
+        <button class="module-link language-option" data-lang="fr"><img class="language-flag" src="../Resources/flags/fr.svg" alt="FR" onerror="this.style.display='none'" style="width:20px;height:14px;margin-right:8px;object-fit:cover"><span class="language-label" data-i18n="lang_french">French</span></button>
+        <button class="module-link language-option" data-lang="en"><img class="language-flag" src="../Resources/flags/en.svg" alt="EN" onerror="this.style.display='none'" style="width:20px;height:14px;margin-right:8px;object-fit:cover"><span class="language-label" data-i18n="lang_english">English</span></button>
+        <button class="module-link language-option" data-lang="de"><img class="language-flag" src="../Resources/flags/de.svg" alt="DE" onerror="this.style.display='none'" style="width:20px;height:14px;margin-right:8px;object-fit:cover"><span class="language-label" data-i18n="lang_german">German</span></button>
+        <button class="module-link language-option" data-lang="es"><img class="language-flag" src="../Resources/flags/es.svg" alt="ES" onerror="this.style.display='none'" style="width:20px;height:14px;margin-right:8px;object-fit:cover"><span class="language-label" data-i18n="lang_spanish">Spanish</span></button>
       </section>
     </nav>  `
+};
+
+const projectTemplates = {
+  skeletonCard: `
+    <div class="project-skeleton-visual"></div>
+    <div class="project-skeleton-line short"></div>
+    <div class="project-skeleton-line long"></div>
+  `,
+  errorMessage: `<p class="error-message">Could not load projects.</p>`
 };
