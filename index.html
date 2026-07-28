@@ -20,9 +20,9 @@
   <header>
     <h1>Niels</h1>
     <div id="toggles-container">
-      <button class="toggle-button" title="Links" onclick="toggleSidebarModule()"><span class="toggle-icon" aria-hidden="true">🔗</span></button>
-      <button class="toggle-button" title="Themes" onclick="toggleThemeModule()"><span class="toggle-icon" aria-hidden="true">🎨</span></button>
-      <button class="toggle-button" title="Languages" onclick="toggleLanguageModule()"><span class="toggle-icon" aria-hidden="true">🌐</span></button>
+      <button class="toggle-button" title="Links" aria-label="Links" data-i18n-title="toggle_links" data-i18n-aria-label="toggle_links" onclick="toggleSidebarModule()"><span class="toggle-icon" aria-hidden="true"><img src="Resources/placeholder-link.png" alt="Links" data-i18n-alt="toggle_links"></span></button>
+      <button class="toggle-button" title="Themes" aria-label="Themes" data-i18n-title="toggle_themes" data-i18n-aria-label="toggle_themes" onclick="toggleThemeModule()"><span class="toggle-icon" aria-hidden="true"><img src="Resources/placeholder-theme.png" alt="Themes" data-i18n-alt="toggle_themes"></span></button>
+      <button class="toggle-button" title="Languages" aria-label="Languages" data-i18n-title="toggle_languages" data-i18n-aria-label="toggle_languages" onclick="toggleLanguageModule()"><span class="toggle-icon" aria-hidden="true"><img src="Resources/placeholder-language.png" alt="Languages" data-i18n-alt="toggle_languages"></span></button>
     </div>
   </header>
   <section id="modules-container">
@@ -34,7 +34,7 @@
     <h2 data-i18n="welcome">Welcome to my portfolio</h2>
     <p data-i18n="description">My name is Niels and i am a junior developper from Lyon</p>
     <p data-i18n="discover">Here you can discover a few highlights from my work and projects.</p>
-    <a class="page-link" href="Projects/projects.html">Explore my projects</a>
+    <a class="page-link" href="Projects/projects.html" data-i18n="explore_projects">Explore my projects</a>
   </section>
   <footer>
     <p id="actualDate"></p>

@@ -36,6 +36,72 @@
   align-items: stretch;
 }
 
+@media (max-width: 1024px) {
+  #modules-container {
+    width: min(260px, calc(100vw - 24px));
+    top: 76px;
+    bottom: 76px;
+  }
+
+  .module-link {
+    font-size: 15px;
+    padding: 9px 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  #modules-container {
+    width: min(92vw, 320px);
+    right: 12px;
+    left: auto;
+    top: 76px;
+    bottom: 76px;
+  }
+
+  .module-container {
+    padding: 10px;
+  }
+
+  .links-list {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-options {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  #modules-container {
+    width: calc(100vw - 24px);
+    left: 12px;
+    right: 12px;
+    top: 82px;
+    bottom: auto;
+    max-height: min(52vh, 320px);
+  }
+
+  .module-container {
+    margin: 8px 0;
+  }
+
+  .module-link {
+    font-size: 14px;
+    padding: 9px 10px;
+  }
+
+  .theme-options .module-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .theme-option {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 .links-list .module-link {
   min-height: 46px;
   border: 1px solid rgba(34, 48, 79, 0.08);
@@ -65,9 +131,7 @@
   color: inherit;
 }
 
-.link-icon img,
-.language-flag img,
-.toggle-icon img {
+.link-icon img, .language-flag img, .toggle-icon img {
   display: inline-block;
   width: 24px;
   height: 24px;
@@ -81,12 +145,16 @@
   justify-content: center;
   width: 20px;
   height: 20px;
-  font-size: 1.05rem;
 }
 
-.links-list .module-link:hover,
-.language-option:hover,
-.module-link:hover {
+.toggle-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.links-list .module-link:hover, .language-option:hover, .module-link:hover {
   background: var(--accent-color);
   color: white;
   transform: translateY(-2px);
@@ -136,15 +204,15 @@
 }
 
 .theme-light {
-  background: var(--swatch-light);
+  background: var(--theme-light);
 }
 
 .theme-dark {
-  background: var(--swatch-dark);
+  background: var(--theme-dark);
 }
 
 .theme-accent {
-  background: var(--swatch-accent);
+  background: var(--theme-accent);
 }
 
 .language-list {
@@ -175,7 +243,8 @@
 }
 
 #modules-container {
-  width: 300px;
+  z-index: 30;
+  width: min(300px, calc(100vw - 32px));
   right: 16px;
   top: 84px;
   bottom: 80px;
@@ -192,17 +261,19 @@
 
 #modules-container::-webkit-scrollbar-thumb {
   background: rgba(109, 139, 255, 0.35);
-  border-radius: 999px;
+  border-radius: 100px;
 }
 
 .module-container {
+  position: relative;
+  z-index: 20;
   background: var(--glass-color-transparent);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 12px 24px rgba(23, 32, 51, 0.08);
   border-radius: 16px;
   margin: 10px 0;
-  padding: 10px 10px 14px;
+  padding: 10px;
   opacity: 0;
   transform: translateY(-12px) scale(0.98);
   transform-origin: top right;

@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const a = document.createElement('a');
       a.className = 'page-link project-link';
       a.href = project.url || '#';
-      a.textContent = 'Discover the project';
+      a.setAttribute('data-i18n', 'project_discover');
+      a.textContent = i18n('project_discover');
 
       card.appendChild(img);
       card.appendChild(h3);
@@ -54,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       grid.appendChild(card);
     });
+
+    updatePageText();
   }
 
   fetch(dataUrl)
@@ -82,7 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
           console.error('Fallback script loaded but no window.__projectData found');
           skeletons.forEach(s => s.remove());
           if (loader) loader.setAttribute('aria-hidden', 'true');
-          grid.innerHTML = projectTemplates && projectTemplates.errorMessage ? projectTemplates.errorMessage : '<p style="grid-column:1/-1;color:var(--text-color)">Could not load projects.</p>';
+          grid.innerHTML = projectTemplates && projectTemplates.errorMessage ? projectTemplates.errorMessage : '<p style="grid-column:1/-1;color:var(--text-color)" data-i18n="projects_error">Could not load projects.</p>';
+          updatePageText();
         }
       };
       s.onerror = () => {

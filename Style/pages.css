@@ -6,12 +6,11 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  min-height: 400px;
   gap: 20px;
   margin-top: 30px;
 }
 
-/* Loader / spinner for projects */
 .projects-loader {
   grid-column: 1/-1;
   display: flex;
