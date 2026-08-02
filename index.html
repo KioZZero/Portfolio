@@ -3,15 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio menu</title>
+  <title>Home - Niels Diab</title>
+  <link rel="stylesheet" href="styles/root.css">
+  <link rel="stylesheet" href="styles/menu.css">
+  <script src="scripts/footer-date.js"></script>
 </head>
 <body>
-    <header>
-        <h1>My Portfolio</h1>
-    </header>
-    <main></main>
-    <footer>
-        <p>&copy; 20XX My Portfolio. All rights reserved.</p>
-    </footer>
+    <section id="background">
+        <header>
+            <p id="header-name">NIELS</p>
+            <nav id="header-menu">
+                <a class="header-link" href="index.html">Home</a>
+                <a class="header-link" href="pages/about.html">About</a>
+                <a class="header-link" href="pages/projects.html">Projects</a>
+                <a class="header-link" href="pages/contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <img id="profile-image" src="resources/profile-3.png" alt="Portrait of the developer" />
+
+        <main>
+            <h1>Hi, im Niels Diab</h1>
+            <h2>software developer</h2>
+            <p>something something</p>
+            
+            <div id="social-links">
+                <a href="#" target="_blank" aria-label="GitHub">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" aria-hidden="true">
+                    </svg>
+                </a>
+                <a href="#" target="_blank" aria-label="LinkedIn">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" aria-hidden="true">
+                    </svg>
+                </a>
+                <a href="#" target="_blank" aria-label="Instagram">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" aria-hidden="true">
+                    </svg>
+                </a>
+            </div>
+        </main>
+        
+        <footer>
+            <p id="footer-text">&copy; 2000 My Portfolio. All rights reserved.</p>
+        </footer>
+    </section>
 </body>
 </html>

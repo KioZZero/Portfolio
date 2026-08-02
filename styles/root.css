@@ -1,0 +1,82 @@
+:root {
+    --color-surface: #0f172a;
+    --color-surface-strong: rgba(15, 23, 42, 0.94);
+    --color-surface-soft: rgba(255, 255, 255, 0.12);
+    --color-surface-hover: rgba(255, 255, 255, 0.16);
+    --color-bg: linear-gradient(135deg, var(--color-surface) 0%, #111c33 100%);
+
+    --color-text: #f8fafc;
+    --color-muted: #cbd5e1;
+    --color-accent: #fbbf24;
+    --color-white: #ffffff;
+
+    --color-overlay: rgba(255, 255, 255, 0.08);
+    --color-shadow: rgba(2, 6, 23, 0.28);
+    --color-shadow-strong: rgba(0, 0, 0, 0.22);
+    --color-shadow-soft: rgba(0, 0, 0, 0.18);
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: var(--color-text);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.page {
+    width: min(100%, 900px);
+    padding: 32px;
+    border-radius: 28px;
+    background: linear-gradient(135deg, var(--color-surface-strong), rgba(2, 6, 23, 0.86));
+    box-shadow: 0 24px 70px var(--color-shadow);
+    color: var(--color-text);
+}
+
+.page h1 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 2rem;
+}
+
+.page p {
+    color: var(--color-muted);
+    line-height: 1.7;
+    margin: 0 0 12px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 12px;
+        align-items: flex-start;
+    }
+
+    .page {
+        padding: 24px;
+    }
+
+    .page h1 {
+        font-size: 1.6rem;
+    }
+}
